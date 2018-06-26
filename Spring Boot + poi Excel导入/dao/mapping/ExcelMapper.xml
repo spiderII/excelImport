@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wintech.soli.cmsplat.business.excelImport.dao.ExcelMapper">
+    <resultMap id="BaseResultMap" type="com.wintech.soli.commonapi.employee.SoliEmployeeInfoBean">
+
+        <!--
+        WARNING - @mbg.generated
+        -->
+        <id column="empl_id" jdbcType="INTEGER" property="emplId"/>
+        <result column="empl_name" jdbcType="VARCHAR" property="emplName"/>
+        <result column="empl_nick_name" jdbcType="VARCHAR" property="emplNickName"/>
+        <result column="empl_email" jdbcType="VARCHAR" property="emplEmail"/>
+        <result column="empl_gender" jdbcType="INTEGER" property="emplGender"/>
+        <result column="empl_phone" jdbcType="VARCHAR" property="emplPhone"/>
+        <result column="empl_dept_job" jdbcType="VARCHAR" property="emplDeptJob"/>
+        <result column="empl_is_tgcr" jdbcType="INTEGER" property="emplIsTgcr"/>
+        <result column="empl_birthday" jdbcType="TIMESTAMP" property="emplBirthday"/>
+        <result column="empl_introduction" jdbcType="VARCHAR" property="emplIntroduction"/>
+        <result column="comp_id" jdbcType="INTEGER" property="compId"/>
+        <result column="empl_status" jdbcType="INTEGER" property="emplStatus"/>
+        <result column="role_id" jdbcType="INTEGER" property="roleId"/>
+        <result column="empl_topic_num" jdbcType="INTEGER" property="emplTopicNum"/>
+        <result column="empl_topic_report" jdbcType="INTEGER" property="emplTopicReport"/>
+        <result column="empl_icon_path" jdbcType="VARCHAR" property="emplIconPath"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+    </resultMap>
+
+    <insert id="addUser" parameterType="java.util.Map">
+        insert into  soli_employee_info
+        (empl_name,
+        empl_nick_name,
+        empl_email,
+        empl_gender,
+        empl_phone,
+        empl_dept_job,
+        empl_is_tgcr,
+        empl_birthday,
+        empl_introduction,
+        comp_id,
+        role_id,
+        empl_topic_num,
+        empl_topic_report,
+        empl_rebirt_num,
+        empl_icon_path)
+        values
+        (
+        #{emplName},
+        #{emplNickName},
+        #{emplEmail},
+        #{emplGender},
+        #{emplPhone},
+        #{emplDeptJob},
+        #{emplIsTgcr},
+        #{emplBirthday},
+        #{emplIntroduction},
+        #{compId},
+        #{roleId},
+        #{emplTopicNum},
+        #{emplTopicReport},
+        #{emplRebirtNum},
+        #{emplIconPath}
+        )
+    </insert>
+</mapper>
